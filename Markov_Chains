@@ -1,5 +1,8 @@
 Task 2 - Text Generation with Markov Chains.
 Here I have used Markovify and other techniques to upload the file, read it, clean it etc and generated some texts which may or may not have meaning because Markovify is not built for that, for meaningful sentences we can use transformer model instead.
 Uploading my Google Colab notebook for the code and output. 
+Here's the link given below:
 
+https://colab.research.google.com/drive/1EjjCR1ys-MYpE40Cy2SwjLufqxdSAj3r?usp=sharing
 
+The .txt file used is uploaded in the repository with the name  "Markov_Text"
