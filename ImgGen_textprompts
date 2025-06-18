@@ -1,0 +1,68 @@
+Task 1 - Image Generation with Pre-Trained Models.
+I used Stable Diffusion to generate images using text prompts. 
+I have used Visual Studio Code to do this task as my Google Colab had some import an building wheels issue.
+It took a long time to train epochs in VS Code but managed to do it. 
+
+---CODE---
+
+
+
+
+import time
+import keras_cv
+from tensorflow import keras
+import matplotlib.pyplot as plt
+
+
+
+def plot_images(images):
+    plt.figure(figsize=(20, 20))
+    for i in range(len(images)):
+        ax = plt.subplot(1, len(images), i + 1)
+        plt.imshow(images[i])
+        plt.axis("off")
+    plt.show()
+
+
+
+
+
+
+if __name__ == "__main__":
+    # Load model
+    model = keras_cv.models.StableDiffusion(img_width=512, img_height=512)
+
+    # Generate images
+    prompt = "photograph of a cat playing an instrument"
+    start = time.time()
+    images = model.text_to_image(prompt, batch_size=3)
+    print(f"Image generation took {time.time() - start:.2f} seconds.")
+
+    # Display
+    plot_images(images)
+    plt.show()
+
+
+images = model.text_to_image(
+        "majestic glowing fox spirit, fantasy art",  
+"silver and cyan fur", "ethereal aura", "high quality, highly detailed", "elegant lighting",  
+"character design", "digital painting", "cinematic", "mystical forest", "magic energy trails", "serene yet powerful",
+    batch_size=3,
+)
+plot_images(images)
+
+
+
+
+
+---Output Screenshots---
+
+
+
+
+
+
+
+
+
+
